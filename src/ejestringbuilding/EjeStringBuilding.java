@@ -42,7 +42,10 @@ public class EjeStringBuilding {
 	StringBuilder CadenaBuilder = new StringBuilder();
 	CadenaBuilder.append(scanner.nextLine());
 	
+	System.out.println("Con for");
 	System.out.println(StringBuildingFor(CadenaBuilder));
+	System.out.println("Con while");
+	System.out.println(StringBuildingWhile(CadenaBuilder));
 	}
 	
 	
@@ -69,16 +72,25 @@ public static StringBuilder StringBuildingFor(StringBuilder BuildCadena) {
 		BuildCadena = BuildCadena.append(" " + scanner.nextLine());
 		
 	}else if(selec== 2){
-		System.out.println("Borrando Cadena .......");
+		System.out.println("Borrando Cadena con .delete .......");
 		BuildCadena = BuildCadena.delete(0, BuildCadena.length());
 		System.out.println("Cadena Borrada");
 	}else {
-		System.out.println("Borrando Cadena .......");
+		System.out.println("Borrando Cadena con .setlength() .......");
 		BuildCadena.setLength(0);
 		System.out.println("Cadena Borrada");
 		
 	}
 	return  BuildCadena;
 	
+}
+public static StringBuilder StringBuildingWhile(StringBuilder BuildCadena) {
+	int i = 0;
+	StringBuilder NewCadenaBuilder = new StringBuilder("");
+	while(i<BuildCadena.length()) {
+		NewCadenaBuilder.append(BuildCadena.charAt(i));
+		System.out.println("Recorriendo cadena ........    " + NewCadenaBuilder);
+		i++;
+	}return BuildCadena;
 }
 }
